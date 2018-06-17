@@ -17,3 +17,16 @@ x structure of code
 		x train_one_epoch, with data augmentation
 		x eval_one_epoch
 		x train
+
+### 2018。6.17
+x successfully run code for part segmentation
+	x submit to cluster
+x data processing in 'provider.py'
+	? how to convert 'PartAnnotation' to h5 data
+	x 2048 points
+	x label, data, seg
+x structure of code
+	? pointnet_part_seg: network structure (without T-Net) 
+	x part_seg/train.py: training
+	
+	
