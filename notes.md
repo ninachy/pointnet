@@ -12,6 +12,8 @@ x structure of code
 		? how to update by backprop?
 	x models/pointnet_cls: network for classification
 	  models/pointnet_cls: without T-Net
+		x get_model: same as paper figure
+		x get_loss: enforce transformation as orthogonal matrix
 	x train
 		x parameters
 		x train_one_epoch, with data augmentation
@@ -26,7 +28,19 @@ x data processing in 'provider.py'
 	x 2048 points
 	x label, data, seg
 x structure of code
-	? pointnet_part_seg: network structure (without T-Net) 
+	x pointnet_part_seg: network structure  
+		x get_model: different from models/pointnet_cls, use all concatenated feature
+		x get_loss
+			x joint segmentation loss and classification loss
+			x also enforce transformation as orthogonal matrix
 	x part_seg/train.py: training
-	
-	
+		x train_one_epoch
+		x eval_one_epoch	
+
+### 2018.6.18	
+? planning 
+	x should focus on segmentation task
+	? compare pointnet_cls network and point_part_seg
+	? joint loss function with different weight
+	? compare with/without T-Net
+	? deformable classification with intrinsic feature
